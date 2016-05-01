@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io/api/android,intellij,java,gradle,osx,crashlytics
 
 ### Android ###
+
 # Built application files
 *.apk
 *.ap_
@@ -30,6 +31,7 @@ proguard/
 
 # Android Studio Navigation editor temp files
 .navigation/
+
 
 ### Android Patch ###
 gen-external-apklibs
@@ -142,3 +144,7 @@ Temporary Items
 #Crashlytics
 crashlytics-build.properties
 com_crashlytics_export_strings.xml
+
+# Android Studio captures folder
+captures/
+
