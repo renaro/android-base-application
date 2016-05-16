@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <color name="primary">@color/blue</color>
+    <color name="primary_dark">@color/dark_blue</color>
+    <color name="accent">#2b7ecb</color>
+    <color name="status_payment_paid">@color/green</color>
+    <color name="status_payment_partially_paid">@color/dark_blue_ocean</color>
+    <color name="status_payment_not_paid">@color/red</color>
+
+    <color name="default_background_color">#F9F9F9</color>
+
+    <color name="almostWhite">#F9F9F9</color>
+    <color name="primary_text">@color/grey_900</color>
+    <color name="secondary_text">@color/grey_1000</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="ligth_gray">#C6C6C6</color>
+    <color name="light_divider">#DDDDDD</color>
+    <color name="almostWhite2">#F6F6F6</color>
+
+
+
+    <color name="darker_blue">#0c2f39</color>
+    <color name="dark_blue">#1e728c</color>
+    <color name="blue">#2BA6CB</color>
+    <color name="dark_blue_ocean">#2E327D</color>
+    <color name="dark_red">#7D2E32</color>
+    <color name="red">#F44336</color>
+    <color name="green">#2E7D32</color>
+    <color name="dark_green">#0E5D12</color>
+    <color name="blue_grey_500">#607D8B</color>
+    <color name="grey_900">#212121</color>
+    <color name="grey_1000">#727272</color>
+    <color name="grey_2000">#D9D9D9</color>
+    <color name="white">#ffffff</color>
+
+    <color name="black">#000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="green_80">#CC86A961</color>
+    <color name="transparent">#00FFFFFF</color>
+
+
+
 </resources>
