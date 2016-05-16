@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyBaseApplication</string>
+    <string name="register_activity_title">RegisterActivity Title</string>
+    <string name="register_success_message">Register Success Message!</string>
+    <string name="loading">Loading</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="error_missing_fields_message">Fill the required fields.</string>
+    <string name="error_password_does_not_match">The password does not match to each other.</string>
+    <string name="error_general_error">General error message</string>
 </resources>
