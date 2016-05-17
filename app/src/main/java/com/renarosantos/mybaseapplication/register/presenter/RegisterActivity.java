@@ -42,7 +42,7 @@ public class RegisterActivity extends BaseActivity implements RegisterView, View
     @NonNull
     @Override
     protected BasePresenter createPresenter(@NonNull final Activity activity) {
-        return BasePresenter.nullPresenter(this);
+        return null;
     }
 
     @Override

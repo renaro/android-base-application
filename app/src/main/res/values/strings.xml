@@ -7,4 +7,11 @@
     <string name="error_missing_fields_message">Fill the required fields.</string>
     <string name="error_password_does_not_match">The password does not match to each other.</string>
     <string name="error_general_error">General error message</string>
+    <string name="or">ou</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="login_activity_title">Login Screen Title</string>
+    <string name="error_wrong_credentials_message">Email or passord not valid</string>
+    <string name="error_login_required_fields">Password and Email must not be empty</string>
 </resources>
