@@ -81,7 +81,7 @@
                     android:layout_marginLeft="@dimen/margin_15"
                     android:layout_marginRight="@dimen/margin_15"
                     android:layout_marginTop="@dimen/margin_15"
-                    android:hint="@string/name"
+                    android:hint="@string/name_hint"
                     android:textSize="@dimen/body"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -96,7 +96,7 @@
                     android:layout_marginLeft="@dimen/margin_15"
                     android:layout_marginRight="@dimen/margin_15"
                     android:layout_marginTop="@dimen/margin_5"
-                    android:hint="@string/email"
+                    android:hint="@string/email_hint"
                     android:inputType="textEmailAddress"
                     android:textSize="@dimen/body"
                     />
@@ -113,7 +113,7 @@
                     android:layout_marginLeft="@dimen/margin_15"
                     android:layout_marginRight="@dimen/margin_15"
                     android:layout_marginTop="@dimen/margin_5"
-                    android:hint="@string/password"
+                    android:hint="@string/password_hint"
                     android:inputType="textPassword"
                     android:fontFamily="sans-serif"
                     android:textSize="@dimen/body"/>
@@ -130,7 +130,7 @@
                     android:layout_marginLeft="@dimen/margin_15"
                     android:layout_marginRight="@dimen/margin_15"
                     android:layout_marginTop="@dimen/margin_5"
-                    android:hint="@string/confirm_password_placeholder"
+                    android:hint="@string/confirm_password_hint"
                     android:fontFamily="sans-serif"
                     android:inputType="textPassword"
                     android:textSize="@dimen/body"
@@ -148,7 +148,7 @@
                 android:background="@drawable/rounded_background"
                 android:gravity="center_horizontal"
                 android:padding="@dimen/margin_8"
-                android:text="@string/register"
+                android:text="@string/register_hint"
                 android:textColor="@color/white"
                 android:textSize="@dimen/button_3"/>
 
