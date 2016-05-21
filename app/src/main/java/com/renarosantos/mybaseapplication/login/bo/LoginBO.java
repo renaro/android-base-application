@@ -3,6 +3,8 @@ package com.renarosantos.mybaseapplication.login.bo;
 import android.support.annotation.NonNull;
 import android.support.annotation.WorkerThread;
 
+import com.renarosantos.mybaseapplication.remote.request.FacebookLoginRequest;
+import com.renarosantos.mybaseapplication.remote.response.LoginResponse;
 import com.renarosantos.mybaseapplication.user.dao.FacebookUserCredentials;
 import com.renarosantos.mybaseapplication.user.dao.LoggedUser;
 import com.renarosantos.mybaseapplication.user.dao.UserDAO;

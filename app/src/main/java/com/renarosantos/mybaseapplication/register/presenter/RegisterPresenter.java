@@ -5,14 +5,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.srnegocio.app.business.RegisterBO;
-import com.srnegocio.app.business.ServiceStarter;
-import com.srnegocio.app.business.login.LoginBO;
-import com.srnegocio.app.mechanism.AppTask;
-import com.srnegocio.app.mechanism.FacebookLogin;
-import com.srnegocio.app.mechanism.TaskExecutor;
-import com.srnegocio.app.model.entities.LoggedUser;
-import com.srnegocio.app.view.register.RegisterView;
+import com.renarosantos.mybaseapplication.login.bo.LoginBO;
+import com.renarosantos.mybaseapplication.mechanism.AppTask;
+import com.renarosantos.mybaseapplication.mechanism.FacebookLogin;
+import com.renarosantos.mybaseapplication.mechanism.TaskExecutor;
+import com.renarosantos.mybaseapplication.register.bo.RegisterBO;
+import com.renarosantos.mybaseapplication.register.view.RegisterView;
+import com.renarosantos.mybaseapplication.user.dao.LoggedUser;
 
 /**
  * Created by renarosantos on 06/03/16.
@@ -24,20 +23,18 @@ public class RegisterPresenter {
     private final TaskExecutor mTaskExecutor;
     private final FacebookLogin mFacebookLogin;
     private final LoginBO mLoginBO;
-    private final ServiceStarter mServiceStarter;
 
-    public RegisterPresenter(@NonNull final LoginBO loginBO,@NonNull final ServiceStarter serviceStarter, @NonNull final FacebookLogin facebookLogin,
+    public RegisterPresenter(@NonNull final LoginBO loginBO,  @NonNull final FacebookLogin facebookLogin,
                              @NonNull final TaskExecutor taskExecutor, @NonNull final RegisterBO registerBO,
                              @NonNull final RegisterView view) {
         mLoginBO = loginBO;
-        mServiceStarter = serviceStarter;
         mView = view;
         mRegisterBO = registerBO;
         mTaskExecutor = taskExecutor;
         mFacebookLogin = facebookLogin;
         final LoggedUser logged = mRegisterBO.isLogged();
         if (logged != null) {
-            mView.openMainActivity();
+            mView.openSuccessActivity();
         }
     }
 
@@ -53,7 +50,7 @@ public class RegisterPresenter {
         String email = mView.getEmail();
 
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(name) || TextUtils.isEmpty(password) ||
-            TextUtils.isEmpty(password2)) {
+                TextUtils.isEmpty(password2)) {
             mView.showRequiredFieldsError();
         } else if (!password.equals(password2)) {
             mView.showDifferentPasswordsError();
@@ -150,8 +147,7 @@ public class RegisterPresenter {
             mView.hideLoading();
             if (result != null) {
                 registerSuccess();
-                mView.openMainActivity();
-                mServiceStarter.startSyncService();
+                mView.openSuccessActivity();
             } else {
                 mView.onError();
             }

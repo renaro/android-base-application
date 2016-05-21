@@ -2,7 +2,6 @@ package com.renarosantos.mybaseapplication.sale.model;
 
 import android.support.annotation.NonNull;
 
-import com.renarosantos.mybaseapplication.remote.request.sales.RemoteSalesParcel;
 import com.renarosantos.mybaseapplication.sale.entity.ParcelEntity;
 
 import java.io.Serializable;
@@ -43,13 +42,6 @@ public class SaleParcel implements Serializable {
 
     public PaymentSaleState paymentState() {
         return mPaymentState;
-    }
-
-    public static SaleParcel from(final RemoteSalesParcel parcel) {
-        final Integer state = parcel.state();
-        final PaymentSaleState paymentSaleState = PaymentSaleState.values()[state];
-        return new SaleParcel(parcel.id(), parcel.saleId(), parcel.total(), parcel.dueDate(), parcel.order(),
-                paymentSaleState, false);
     }
 
     public String id() {

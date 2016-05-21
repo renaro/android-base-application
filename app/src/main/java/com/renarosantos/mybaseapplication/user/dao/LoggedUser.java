@@ -1,5 +1,9 @@
 package com.renarosantos.mybaseapplication.user.dao;
 
+import android.support.annotation.NonNull;
+
+import com.renarosantos.mybaseapplication.remote.response.LoginResponse;
+
 /**
  * Created by renarosantos on 05/03/16.
  */
@@ -13,9 +17,9 @@ public class LoggedUser {
         mUserId = userId;
     }
 
-//    public static LoggedUser from(@NonNull final LoginResponse result) {
-//        return new LoggedUser(result.getSession(), result.getUserId());
-//    }
+    public static LoggedUser from(@NonNull final LoginResponse result) {
+        return new LoggedUser(result.getSession(), result.getUserId());
+    }
 
     public String userToken() {
         return mUserToken;

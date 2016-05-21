@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.renarosantos.mybaseapplication.item.model.Item;
 import com.renarosantos.mybaseapplication.item.product.entity.ProductEntity;
-import com.renarosantos.mybaseapplication.remote.request.items.RemoteItem;
 
 import java.io.Serializable;
 
@@ -45,11 +44,6 @@ public class Product extends Item implements Serializable {
     public void removeFromStock(final Integer amount) {
         mProductAmount -= amount;
         mProductAmount = mProductAmount > 0 ? mProductAmount : 0;
-    }
-
-    public static Product from(final RemoteItem item) {
-        return new Product(item.id(), item.name(), item.price(),
-                item.amount(), item.cost(), "", item.deleted() == DELETED, false);
     }
 
 }

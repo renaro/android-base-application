@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.renarosantos.mybaseapplication.item.model.Item;
 import com.renarosantos.mybaseapplication.item.service.entity.ServiceEntity;
-import com.renarosantos.mybaseapplication.remote.request.items.RemoteItem;
 
 import java.io.Serializable;
 
@@ -23,9 +22,5 @@ public class Service extends Item implements Serializable {
         return new Service(service.id(), service.name(), service.price(), service.cost(), service.image(),
                 service.isDeleted(), service.isEdited());
     }
-
-    public static Service from(final RemoteItem item) {
-        return new Service(item.id(), item.name(), item.price(), item.cost(), "",
-                item.deleted() == DELETED, false);
-    }
+    
 }

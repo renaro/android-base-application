@@ -3,14 +3,13 @@ package com.renarosantos.mybaseapplication.contact.model;
 import android.support.annotation.NonNull;
 
 import com.renarosantos.mybaseapplication.contact.entity.LocalContactEntity;
-import com.renarosantos.mybaseapplication.remote.request.contacts.RemoteContact;
 
 import java.io.Serializable;
 
 /**
  * Created by renarosantos on 18/05/16.
  */
-public class Contact implements Serializable, Comparable<Contact>{
+public class Contact implements Serializable, Comparable<Contact> {
 
     private static final int DELETED = 1;
     private String id;
@@ -82,19 +81,13 @@ public class Contact implements Serializable, Comparable<Contact>{
                 entity.isEdited(), entity.isDeleted());
     }
 
-    //todo CREATION DATE is REALLY a date, yyyy-mm-dd
-    public static Contact from(@NonNull final RemoteContact contact) {
-        return new Contact(contact.id(), contact.name(), contact.email(), contact.phone(), contact.image(),
-                0, false, contact.deleted() == DELETED);
-    }
-
     public static Contact emptyContact() {
-        return new Contact(null,"", "","", "",0,false,false);
+        return new Contact(null, "", "", "", "", 0, false, false);
     }
 
     @Override
     public int compareTo(final Contact another) {
-        if(another == null){
+        if (another == null) {
             return 1;
         } else {
             return name.toUpperCase().compareTo(another.name().toUpperCase());
