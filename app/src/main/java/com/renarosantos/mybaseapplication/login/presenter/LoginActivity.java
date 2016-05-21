@@ -17,7 +17,13 @@ import android.widget.EditText;
 import com.renarosantos.mybaseapplication.R;
 import com.renarosantos.mybaseapplication.base.BaseActivity;
 import com.renarosantos.mybaseapplication.base.BasePresenter;
+import com.renarosantos.mybaseapplication.login.bo.LoginBO;
 import com.renarosantos.mybaseapplication.login.view.LoginView;
+import com.renarosantos.mybaseapplication.mechanism.AppTaskExecutor;
+import com.renarosantos.mybaseapplication.mechanism.FacebookSdkLogin;
+import com.renarosantos.mybaseapplication.register.bo.RegisterBO;
+import com.renarosantos.mybaseapplication.user.dao.UserDAO;
+import com.renarosantos.mybaseapplication.user.dao.UserPreferences;
 
 /**
  * Created by renarosantos on 23/10/15.
@@ -39,10 +45,9 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @NonNull
     @Override
     protected BasePresenter createPresenter(@NonNull final Activity activity) {
-//        return new LoginPresenter(new FacebookSdkLogin(new UserPreferences(this)),
-//                new AppTaskExecutor(this), new RegisterBO(new UserDAO(this), new UserPreferences(this)),
-//                new LoginBO(new UserDAO(this), new UserPreferences(this)), this);
-        return null;
+        return new LoginPresenter(new FacebookSdkLogin(new UserPreferences(this)),
+                new AppTaskExecutor(this), new RegisterBO(new UserDAO(this), new UserPreferences(this)),
+                new LoginBO(new UserDAO(this), new UserPreferences(this)), this);
     }
 
     @Override

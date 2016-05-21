@@ -14,4 +14,13 @@
     <string name="login_activity_title">Login Screen Title</string>
     <string name="error_wrong_credentials_message">Email or passord not valid</string>
     <string name="error_login_required_fields">Password and Email must not be empty</string>
+    <string name="name_hint">Name</string>
+    <string name="confirm_password_hint">Confirm password</string>
+    <string name="register_hint">Register</string>
+    <string name="pagamento_at_sight">At Sight</string>
+    <string name="pagamento_divided">Divided</string>
+    <string name="payment_status_not_paid">Not Paid</string>
+    <string name="payment_status_partially_paid">Partially Paid</string>
+    <string name="payment_status_paid">Paid</string>
+    <string name="payment_status_all">All</string>
 </resources>
