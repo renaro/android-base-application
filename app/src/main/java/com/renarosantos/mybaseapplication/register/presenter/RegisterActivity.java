@@ -18,8 +18,13 @@ import android.widget.Toast;
 import com.renarosantos.mybaseapplication.R;
 import com.renarosantos.mybaseapplication.base.BaseActivity;
 import com.renarosantos.mybaseapplication.base.BasePresenter;
+import com.renarosantos.mybaseapplication.login.bo.LoginBO;
+import com.renarosantos.mybaseapplication.mechanism.AppTaskExecutor;
+import com.renarosantos.mybaseapplication.mechanism.FacebookSdkLogin;
+import com.renarosantos.mybaseapplication.register.bo.RegisterBO;
 import com.renarosantos.mybaseapplication.register.view.RegisterView;
-
+import com.renarosantos.mybaseapplication.user.dao.MockUserDAO;
+import com.renarosantos.mybaseapplication.user.dao.UserPreferences;
 
 public class RegisterActivity extends BaseActivity implements RegisterView, View.OnClickListener {
 
@@ -42,7 +47,9 @@ public class RegisterActivity extends BaseActivity implements RegisterView, View
     @NonNull
     @Override
     protected BasePresenter createPresenter(@NonNull final Activity activity) {
-        return null;
+        return new RegisterPresenter(new LoginBO(new MockUserDAO(this), new UserPreferences(this)),
+                new FacebookSdkLogin(new UserPreferences(this)), new AppTaskExecutor(this),
+                new RegisterBO(new MockUserDAO(this), new UserPreferences(this)), this);
     }
 
     @Override
@@ -65,8 +72,6 @@ public class RegisterActivity extends BaseActivity implements RegisterView, View
             supportActionBar.setTitle(R.string.register_activity_title);
         }
         mToolbar.setNavigationOnClickListener(new OnBackPressed());
-
-
     }
 
     @Override
@@ -111,18 +116,20 @@ public class RegisterActivity extends BaseActivity implements RegisterView, View
     public void onClick(View v) {
         if (v.getId() == mRegisterButton.getId()) {
             hideKeyboard();
-//            mPresenter.register();
+            //            mPresenter.register();
         }
     }
 
     @Override
     public void showRequiredFieldsError() {
-        Snackbar.make(mCoordinatorLayout, getString(R.string.error_missing_fields_message), Snackbar.LENGTH_LONG).show();
+        Snackbar.make(mCoordinatorLayout, getString(R.string.error_missing_fields_message), Snackbar.LENGTH_LONG)
+                .show();
     }
 
     @Override
     public void showDifferentPasswordsError() {
-        Snackbar.make(mCoordinatorLayout, getString(R.string.error_password_does_not_match), Snackbar.LENGTH_LONG).show();
+        Snackbar.make(mCoordinatorLayout, getString(R.string.error_password_does_not_match), Snackbar.LENGTH_LONG)
+                .show();
     }
 
     @Override
