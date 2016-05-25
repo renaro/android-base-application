@@ -23,7 +23,7 @@ import java.io.IOException;
  * Created by renarosantos on 17/05/16.
  */
 
-public class UserDAO {
+public class UserDAO implements AppUserDAO{
     private final Context mContext;
     private final AppRequestInterface mService;
 

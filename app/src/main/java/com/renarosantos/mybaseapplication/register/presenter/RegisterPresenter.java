@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
+import com.renarosantos.mybaseapplication.base.BasePresenter;
 import com.renarosantos.mybaseapplication.login.bo.LoginBO;
 import com.renarosantos.mybaseapplication.mechanism.AppTask;
 import com.renarosantos.mybaseapplication.mechanism.FacebookLogin;
@@ -16,7 +17,7 @@ import com.renarosantos.mybaseapplication.user.dao.LoggedUser;
 /**
  * Created by renarosantos on 06/03/16.
  */
-public class RegisterPresenter {
+public class RegisterPresenter extends BasePresenter{
 
     private final RegisterView mView;
     private final RegisterBO mRegisterBO;
@@ -38,7 +39,9 @@ public class RegisterPresenter {
         }
     }
 
-    public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+    @Override
+    public void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         mFacebookLogin.onActivityResult(requestCode, resultCode, data, new FacebookLoginListener());
     }
 

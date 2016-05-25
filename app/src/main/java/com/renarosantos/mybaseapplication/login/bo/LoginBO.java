@@ -5,9 +5,9 @@ import android.support.annotation.WorkerThread;
 
 import com.renarosantos.mybaseapplication.remote.request.FacebookLoginRequest;
 import com.renarosantos.mybaseapplication.remote.response.LoginResponse;
+import com.renarosantos.mybaseapplication.user.dao.AppUserDAO;
 import com.renarosantos.mybaseapplication.user.dao.FacebookUserCredentials;
 import com.renarosantos.mybaseapplication.user.dao.LoggedUser;
-import com.renarosantos.mybaseapplication.user.dao.UserDAO;
 import com.renarosantos.mybaseapplication.user.dao.UserPreferences;
 
 /**
@@ -15,10 +15,10 @@ import com.renarosantos.mybaseapplication.user.dao.UserPreferences;
  */
 public class LoginBO {
     private final UserPreferences mUserPreferences;
-    private final UserDAO mUserDAO;
+    private final AppUserDAO mUserDAO;
 
-    public LoginBO(@NonNull final UserDAO pUserDAO, @NonNull final UserPreferences userPreferences) {
-        mUserDAO = pUserDAO;
+    public LoginBO(@NonNull final AppUserDAO userDAO, @NonNull final UserPreferences userPreferences) {
+        mUserDAO = userDAO;
         mUserPreferences = userPreferences;
     }
 

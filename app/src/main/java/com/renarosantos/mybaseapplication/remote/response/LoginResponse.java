@@ -35,4 +35,16 @@ public class LoginResponse {
         return error;
     }
 
+    private LoginResponse(final String session, final String userId, final boolean status) {
+        mSession = session;
+        mUserId = userId;
+        this.status = status;
+    }
+
+    /**
+     * @return a Mock LoginResponse, only use this method to TEST!
+     */
+    public static LoginResponse mock() {
+        return new LoginResponse("session-mocked-get-123","user-id-mocked-123", true);
+    }
 }
